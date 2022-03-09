@@ -1,12 +1,14 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState,useContext } from 'react'
 import axios from 'axios'
+import { AuthContext } from '../context/AuthContext'
 const initialState = {
     query: "",
     data: []
 }
 const WheatherInfo = () => {
     const [state, setState] = useState(initialState);
+    const {token}= useContext(AuthContext)
     //http://api.weatherapi.com/v1/current.json?key=c22fddc0eae54538ad0183954220803&q=London&aqi=no
     //http://api.weatherapi.com/v1/current.json?key=c22fddc0eae54538ad0183954220803
     const show = () => {
@@ -27,6 +29,7 @@ const WheatherInfo = () => {
 
         <>
             <h1>Search For WheatherInfo of different City</h1>
+            <h2>The token is {token}</h2>
             <input type="text" value={state.query} onChange={(e) => setState({...state,query:e.target.value})}></input>
             <button onClick={show}>Search</button>
             {state?.data?.location && 

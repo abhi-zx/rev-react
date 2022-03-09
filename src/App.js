@@ -1,9 +1,13 @@
 import React from 'react'
+import Login from './components/Login'
 import WheatherInfo from './components/WheatherInfo'
 
 const App = () => {
   return (
-    <div><WheatherInfo/></div>
+    <div>
+      {/* <WheatherInfo/> */}
+      <Login/>
+    </div>
   )
 }
 
