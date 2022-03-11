@@ -4,7 +4,7 @@ import WheatherInfo from './WheatherInfo'
 
 const Login = () => {
     
-    const loginData = useContext(AuthContext)
+    // const loginData = useContext(AuthContext)
     // console.log(loginData)
     const [state, setState] = useState({email:"", password: ""})
     const {isAuth,handelLogin,token}= useContext(AuthContext)
