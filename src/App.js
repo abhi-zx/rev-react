@@ -2,6 +2,7 @@ import React from 'react'
 import Login from './components/Login'
 import Navbar from './components/Navbar'
 import WheatherInfo from './components/WheatherInfo'
+import Routes from './Routes/Routes'
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       {/* <WheatherInfo/> */}
       {/* <Login/> */}
       <Navbar/>
+      <Routes/>
     </div>
   )
 }
