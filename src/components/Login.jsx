@@ -1,6 +1,7 @@
 import React, { useState,useContext } from 'react'
 import {AuthContext} from '../context/AuthContext'
 import WheatherInfo from './WheatherInfo'
+import {useNavigate} from 'react-router-dom'
 
 const Login = () => {
     
@@ -9,6 +10,7 @@ const Login = () => {
     const [state, setState] = useState({email:"", password: ""})
     const {isAuth,handelLogin,token}= useContext(AuthContext)
     // console.log(isAuth)
+    let navigate = useNavigate()
     // console.log(token)
     const handelSubmit=(e)=>{
         e.preventDefault();
@@ -22,7 +24,7 @@ const Login = () => {
         <input placeholder="Password..." value={state.password} onChange={(e) => setState({...state,password:e.target.value})}type="text"></input>
        <input type="submit"value="Login"></input>
     </form>
-    </>: <WheatherInfo/>
+    </>:navigate('/products')
 }
     </>
   )
